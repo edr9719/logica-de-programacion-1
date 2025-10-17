@@ -9,11 +9,13 @@ let numbers;
 function clearDOM() {
   identifier.innerHTML = '';
   highestToLowest.innerHTML = '';
-  lowestToHighest.innerHTML = '';
   sameNumbers.innerHTML = '';
 }
 
 button.addEventListener('click', () => {
+  if (!input.value) {
+    return alert('Please enter 3 numbers. i.e 943');
+  }
   clearDOM();
 
   numbers = input.value;
