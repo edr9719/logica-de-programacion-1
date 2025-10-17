@@ -7,13 +7,15 @@ const button = document.getElementById('button');
 let numbers;
 
 function clearDOM() {
+  input.value = '';
   identifier.innerHTML = '';
   highestToLowest.innerHTML = '';
   sameNumbers.innerHTML = '';
 }
 
 button.addEventListener('click', () => {
-  if (!input.value) {
+  if (!input.value || input.value.split('').length != 3) {
+    clearDOM();
     return alert('Please enter 3 numbers. i.e 943');
   }
   clearDOM();
